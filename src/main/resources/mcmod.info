@@ -1,0 +1,21 @@
+[
+{
+  "modid": "VDerps",
+  "name": "Vorquel's Derps",
+  "description": "A bunch of low level vanilla additions to make things a bit smoother.",
+  "version": "0.0.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "Vorquel"
+  ],
+  "credits": "Thanks to vswe and Pahimar for teaching me the basics of modding Minecraft! :D",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
