@@ -6,6 +6,8 @@ import vorquel.mod.vderps.item.ItemBootsBucket;
 import vorquel.mod.vderps.item.ItemVD;
 import cpw.mods.fml.common.registry.GameRegistry;
 
+//This class is separate from Ref for the sole reason that FML's @GameRegistry.ObjectHolder doesn't play well with others.
+
 @GameRegistry.ObjectHolder(Ref.MOD_ID)
 public class RefObj {
 	

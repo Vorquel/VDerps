@@ -14,6 +14,7 @@ public class BlockVD extends Block {
 	public BlockVD(String name, Material material) {
 		super(material);
 		blockName = name;
+		setCreativeTab(Ref.VD_TAB);
 	}
 	
 	public BlockVD(String name) {

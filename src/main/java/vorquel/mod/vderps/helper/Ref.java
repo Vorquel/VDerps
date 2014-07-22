@@ -1,6 +1,8 @@
 package vorquel.mod.vderps.helper;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
 
 public class Ref {
 	
@@ -13,4 +15,14 @@ public class Ref {
 	public static final String CLIENT_PROXY_CLASS = "vorquel.mod.vderps.proxy.ClientProxy";
 	public static final String SERVER_PROXY_CLASS = "vorquel.mod.vderps.proxy.ServerProxy";
 	
+	//////
+	//  Creative Tabs
+	//////
+	public static final CreativeTabs VD_TAB = new CreativeTabs(MOD_ID.toLowerCase()) {
+		
+		@Override
+		public Item getTabIconItem() {
+			return RefObj.bootsBucket;
+		}
+	};
 }

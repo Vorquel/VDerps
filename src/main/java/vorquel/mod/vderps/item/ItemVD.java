@@ -14,6 +14,7 @@ public class ItemVD extends Item {
 	public ItemVD(String name) {
 		super();
 		itemName = name;
+		setCreativeTab(Ref.VD_TAB);
 	}
 	
 	@Override

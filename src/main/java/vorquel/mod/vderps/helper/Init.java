@@ -13,4 +13,9 @@ public class Init {
 		Log.trace("Init.blocks()");
 		GameRegistry.registerBlock(RefObj.furnaceMulti, "furnaceMulti");
 	}
+	
+	public static void recipes() {
+		Log.trace("Init.recipes()");
+		
+	}
 }
