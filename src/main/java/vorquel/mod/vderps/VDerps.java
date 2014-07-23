@@ -25,7 +25,6 @@ public class VDerps {
 		Log.trace("VDerps.preInit()");
 		Config.init(event.getSuggestedConfigurationFile());
 		//TODO: make config GUI
-		//TODO: make logger
 		Init.items();
 		Init.blocks();
 	}
@@ -33,6 +32,7 @@ public class VDerps {
 	@Mod.EventHandler
 	public void init(FMLInitializationEvent event) {
 		Log.trace("VDerps.init()");
+		Init.recipes();
 	}
 	
 	@Mod.EventHandler
