@@ -3,7 +3,9 @@ itemGroup.vderps=Vorquel's Derps
 
 # Item Names #
 item.vderps:bootsBucket.name=Bucket Boots
-item.vderps.bucketWaterBottomless.name=Bottomless Water Bucket
+item.vderps:toolBucket.waterInf.name=Bottomless Water Bucket
+item.vderps:toolBucket.cobbleInf.name=Infinite Cobblestone
+item.vderps:toolBucket.stoneInf.name=Infinite Stone
 
 # Block Names #
 tile.vderps:furnaceMulti.name=Multi-Furnace

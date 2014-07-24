@@ -9,7 +9,7 @@ import vorquel.mod.vderps.helper.Ref;
 
 public class BlockVD extends Block {
 	
-	private String blockName;
+	public final String blockName;
 	
 	public BlockVD(String name, Material material) {
 		super(material);

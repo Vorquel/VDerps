@@ -9,7 +9,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemVD extends Item {
 	
-	private String itemName;
+	public final String itemName;
 	
 	public ItemVD(String name) {
 		super();
