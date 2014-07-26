@@ -31,8 +31,10 @@ public class Init {
 	public static void recipes() {
 		Log.trace("Init.recipes()");
 		GameRegistry.addShapedRecipe(new ItemStack(RefObj.bootsBucket), "a", "b", "c", 'a', Items.leather_boots, 'b', Items.golden_boots, 'c', Items.bucket);
-		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 0), "a a", " b ", 'a', Items.water_bucket, 'b', Items.bucket);
-		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 1), "a b", " c ", 'a', Items.water_bucket, 'b', Items.lava_bucket, 'c', Blocks.cobblestone);
-		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 2), "a b", " c ", 'a', new ItemStack(RefObj.toolBucket, 1, 0), 'b', Items.lava_bucket, 'c', Blocks.stone);
+		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 0), "a", "b", 'a', Blocks.dirt, 'b', Items.bucket);
+		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 0), "a", "b", 'a', Blocks.sand, 'b', Items.bucket);
+		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 1), "a a", " b ", 'a', Items.water_bucket, 'b', Items.bucket);
+		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 2), "a b", " c ", 'a', Items.water_bucket, 'b', Items.lava_bucket, 'c', Blocks.cobblestone);
+		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 3), "a b", " c ", 'a', new ItemStack(RefObj.toolBucket, 1, 1), 'b', Items.lava_bucket, 'c', Blocks.stone);
 	}
 }
