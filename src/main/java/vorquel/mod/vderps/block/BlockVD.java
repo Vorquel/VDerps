@@ -23,12 +23,16 @@ public class BlockVD extends Block {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("tile.%s:%s", Ref.MOD_ID.toLowerCase(), blockName);
+		return String.format("tile.%s", getShortName());
 	}
 	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerBlockIcons(IIconRegister iconRegister) {
-		blockIcon = iconRegister.registerIcon(getUnlocalizedName().substring(getUnlocalizedName().indexOf('.')+1));
+		blockIcon = iconRegister.registerIcon(getShortName());
+	}
+	
+	public String getShortName() {
+		return String.format("%s:%s", Ref.MOD_ID.toLowerCase(), blockName);
 	}
 }

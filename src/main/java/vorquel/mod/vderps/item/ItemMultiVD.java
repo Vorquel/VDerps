@@ -34,13 +34,9 @@ public class ItemMultiVD extends ItemVD {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister iconRegister) {
 		itemIcons = new IIcon[subname.length];
-		//TODO: finish this code segment
-		/*
 		for(int i=0; i<subname.length; ++i) {
-			String temp = getUnlocalizedName()
-			itemIcons[i] = iconRegister.registerIcon(getUnlocalizedName().substring(getUnlocalizedName().indexOf('.')+1));
+			itemIcons[i] = iconRegister.registerIcon(String.format("%s.%s", getShortName(), subname[i]));
 		}
-		*/
 	}
 	
 	@Override

@@ -19,7 +19,7 @@ public class ItemVD extends Item {
 	
 	@Override
 	public String getUnlocalizedName() {
-		return String.format("item.%s:%s", Ref.MOD_ID.toLowerCase(), itemName);
+		return String.format("item.%s", getShortName());
 	}
 	
 	@Override
@@ -30,6 +30,10 @@ public class ItemVD extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IIconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon(getUnlocalizedName().substring(getUnlocalizedName().indexOf('.')+1));
+		itemIcon = iconRegister.registerIcon(getShortName());
+	}
+	
+	public String getShortName() {
+		return String.format("%s:%s", Ref.MOD_ID.toLowerCase(), itemName);
 	}
 }
