@@ -46,6 +46,12 @@ public class ItemMultiVD extends ItemVD {
 			list.add(stack);
 	}
 	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIconFromDamage(int damage) {
+		return itemIcons[damage];
+	}
+	
 	public ItemStack[] getSubItemStacks(int stackSize) {
 		ItemStack[] stacks = new ItemStack[subname.length];
 		for(int i=0; i<subname.length; ++i)
