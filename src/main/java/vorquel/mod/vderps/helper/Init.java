@@ -5,6 +5,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import vorquel.mod.vderps.block.BlockVD;
 import vorquel.mod.vderps.item.ItemVD;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class Init {
@@ -36,5 +37,10 @@ public class Init {
 		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 1), "a a", " b ", 'a', Items.water_bucket, 'b', Items.bucket);
 		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 2), "a b", " c ", 'a', Items.water_bucket, 'b', Items.lava_bucket, 'c', Blocks.cobblestone);
 		GameRegistry.addShapedRecipe(new ItemStack(RefObj.toolBucket, 1, 3), "a b", " c ", 'a', new ItemStack(RefObj.toolBucket, 1, 1), 'b', Items.lava_bucket, 'c', Blocks.stone);
+	}
+	
+	public static void eventHandlers() {
+		Log.trace("Init.eventHandlers()");
+		FMLCommonHandler.instance().bus().register(CraftingFixer.that);
 	}
 }

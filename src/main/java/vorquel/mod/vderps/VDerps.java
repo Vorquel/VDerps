@@ -38,5 +38,6 @@ public class VDerps {
 	@Mod.EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		Log.trace("VDerps.postInit()");
+		Init.eventHandlers();
 	}
 }
