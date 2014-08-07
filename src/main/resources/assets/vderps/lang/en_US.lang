@@ -7,6 +7,7 @@ item.vderps:toolBucket.drainer.name=Draining Bucket
 item.vderps:toolBucket.waterInf.name=Bottomless Water Bucket
 item.vderps:toolBucket.cobbleInf.name=Infinite Cobblestone
 item.vderps:toolBucket.stoneInf.name=Infinite Stone
+item.vderps:toolBucket.bridger.name=Bridger
 
 # Block Names #
 tile.vderps:furnaceMulti.name=Multi-Furnace

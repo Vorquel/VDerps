@@ -7,7 +7,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import vorquel.mod.vderps.item.ItemVD;
+import vorquel.mod.vderps.item.ItemToolBucket;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 import cpw.mods.fml.common.gameevent.TickEvent.PlayerTickEvent;
@@ -25,7 +25,7 @@ public class CraftingFixer {
 	public void detectCrafting(ItemCraftedEvent event) {
 		if(event.player==null) return;
 		if(!(event.player instanceof EntityPlayerMP)) return;
-		if(!(event.crafting.getItem() instanceof ItemVD)) return;
+		if(!(event.crafting.getItem() instanceof ItemToolBucket)) return;
 		if(!toRemove.containsKey(event.player)) {
 			ArrayDeque<Item> deque = new ArrayDeque();
 			toRemove.put(event.player, deque);
