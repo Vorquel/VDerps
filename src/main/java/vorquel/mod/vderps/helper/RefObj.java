@@ -1,5 +1,6 @@
 package vorquel.mod.vderps.helper;
 
+import vorquel.mod.vderps.block.BlockLandingPad;
 import vorquel.mod.vderps.block.BlockFurnaceMulti;
 import vorquel.mod.vderps.block.BlockVD;
 import vorquel.mod.vderps.item.ItemBootsBucket;
@@ -21,6 +22,7 @@ public class RefObj {
 	//////
 	//  Blocks
 	//////
+	public static BlockVD landingPad = new BlockLandingPad();
 	public static BlockVD furnaceMulti = new BlockFurnaceMulti();
 	
 }

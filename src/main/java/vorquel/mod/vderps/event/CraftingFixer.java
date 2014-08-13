@@ -1,4 +1,4 @@
-package vorquel.mod.vderps.helper;
+package vorquel.mod.vderps.event;
 
 import java.util.ArrayDeque;
 import java.util.HashMap;

@@ -10,4 +10,5 @@ item.vderps:toolBucket.stoneInf.name=Infinite Stone
 item.vderps:toolBucket.bridger.name=Bridger
 
 # Block Names #
-tile.vderps:furnaceMulti.name=Multi-Furnace
+tile.vderps:landingPad.name=Landing Pad
+tile.vderps:furnaceMulti.name=Multi Furnace

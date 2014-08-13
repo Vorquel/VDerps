@@ -3,7 +3,11 @@ package vorquel.mod.vderps.helper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.ForgeInternalHandler;
+import net.minecraftforge.common.MinecraftForge;
 import vorquel.mod.vderps.block.BlockVD;
+import vorquel.mod.vderps.event.CraftingFixer;
+import vorquel.mod.vderps.event.LandingPadHandler;
 import vorquel.mod.vderps.item.ItemVD;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -23,6 +27,7 @@ public class Init {
 	public static void blocks() {
 		Log.trace("Init.blocks()");
 		registerBlock(RefObj.furnaceMulti);
+		registerBlock(RefObj.landingPad);
 	}
 	
 	private static void registerBlock(BlockVD block) {
@@ -42,5 +47,6 @@ public class Init {
 	public static void eventHandlers() {
 		Log.trace("Init.eventHandlers()");
 		FMLCommonHandler.instance().bus().register(CraftingFixer.that);
+		MinecraftForge.EVENT_BUS.register(new LandingPadHandler());
 	}
 }
