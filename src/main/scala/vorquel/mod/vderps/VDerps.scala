@@ -2,13 +2,13 @@ package vorquel.mod.vderps
 
 import cpw.mods.fml.common.{Mod, SidedProxy}
 import cpw.mods.fml.common.event.{FMLInitializationEvent, FMLPostInitializationEvent, FMLPreInitializationEvent}
-import vorquel.mod.vderps.helper.{Config, Init, Log, Ref}
+import vorquel.mod.vderps.helper.{Config, Init, Log}
 import vorquel.mod.vderps.proxy.IProxy
 
-@Mod(modid = Ref.MOD_ID, name = Ref.MOD_NAME, version = Ref.VERSION, modLanguage = "scala")
+@Mod(modid = "VDerps", name = "Vorquel's Derps", version = "indev", modLanguage = "scala")
 object VDerps {
 
-  @SidedProxy(clientSide = Ref.CLIENT_PROXY_CLASS, serverSide = Ref.SERVER_PROXY_CLASS)
+  @SidedProxy(clientSide = "vorquel.mod.vderps.proxy.ClientProxy", serverSide = "vorquel.mod.vderps.proxy.ServerProxy")
   var proxy: IProxy = null
 
   @Mod.EventHandler

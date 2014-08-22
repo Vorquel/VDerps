@@ -14,7 +14,7 @@ public class BlockVD extends Block {
 	public BlockVD(String name, Material material) {
 		super(material);
 		blockName = name;
-		setCreativeTab(Ref.VD_TAB);
+		setCreativeTab(Ref.VD_TAB());
 	}
 	
 	public BlockVD(String name) {
@@ -33,6 +33,6 @@ public class BlockVD extends Block {
 	}
 	
 	public String getShortName() {
-		return String.format("%s:%s", Ref.MOD_ID.toLowerCase(), blockName);
+		return String.format("%s:%s", Ref.MOD_ID().toLowerCase(), blockName);
 	}
 }

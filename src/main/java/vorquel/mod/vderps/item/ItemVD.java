@@ -14,7 +14,7 @@ public class ItemVD extends Item {
 	public ItemVD(String name) {
 		super();
 		itemName = name;
-		setCreativeTab(Ref.VD_TAB);
+		setCreativeTab(Ref.VD_TAB());
 	}
 	
 	@Override
@@ -34,6 +34,6 @@ public class ItemVD extends Item {
 	}
 	
 	public String getShortName() {
-		return String.format("%s:%s", Ref.MOD_ID.toLowerCase(), itemName);
+		return String.format("%s:%s", Ref.MOD_ID().toLowerCase(), itemName);
 	}
 }

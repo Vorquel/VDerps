@@ -7,7 +7,7 @@ import cpw.mods.fml.common.FMLLog;
 public class Log {
 	
 	private static void log(Level level, Object obj) {
-		FMLLog.log(Ref.MOD_ID, level, String.valueOf(obj));
+		FMLLog.log(Ref.MOD_ID(), level, String.valueOf(obj));
 	}
 	
 	public static void fatal(Object obj) {
