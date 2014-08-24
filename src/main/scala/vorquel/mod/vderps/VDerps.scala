@@ -28,7 +28,7 @@ object VDerps {
   @Mod.EventHandler
   def postInit(event: FMLPostInitializationEvent): Unit = {
     Log.trace("VDerps.postInit()")
-    Init.eventHandlers()
+    Init.handlers()
   }
 }
 
