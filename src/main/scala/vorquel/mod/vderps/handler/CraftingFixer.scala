@@ -11,7 +11,7 @@ import vorquel.mod.vderps.item.ItemToolBucket
 
 object CraftingFixer {
 
-  private val toRemove: util.HashMap[EntityPlayer, util.ArrayDeque[Item]] = new util.HashMap[_, _]
+  private val toRemove = new util.HashMap[EntityPlayer, util.ArrayDeque[Item]]
 
   @SubscribeEvent
   def detectCrafting(event: PlayerEvent.ItemCraftedEvent) {
@@ -19,7 +19,7 @@ object CraftingFixer {
     if(!event.player.isInstanceOf[EntityPlayerMP]) return
     if(event.crafting.getItem != ItemToolBucket) return
     if(!toRemove.containsKey(event.player)) {
-      val deque: util.ArrayDeque[Item] = new util.ArrayDeque[_]
+      val deque = new util.ArrayDeque[Item]
       toRemove.put(event.player, deque)
     }
     {

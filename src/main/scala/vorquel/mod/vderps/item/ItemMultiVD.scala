@@ -1,5 +1,7 @@
 package vorquel.mod.vderps.item
 
+import java.util
+
 import cpw.mods.fml.relauncher.{SideOnly, Side}
 import net.minecraft.client.renderer.texture.IIconRegister
 import net.minecraft.creativetab.CreativeTabs
@@ -24,11 +26,12 @@ class ItemMultiVD(name: String, params: String*) extends ItemVD(name) {
   }
 
   @SideOnly(Side.CLIENT)
-  override def getSubItems(item: Item, tab: CreativeTabs, list: List[_]) {
+  override def getSubItems(item: Item, tab: CreativeTabs, list: util.List[_]) {
+    val temp = list.asInstanceOf[util.ArrayList[Object]]
     for(i <- 0 until subname.length)
-      list.add(new ItemStack(this, 1, i))
+      temp.add(new ItemStack(this, 1, i))
   }
 
   @SideOnly(Side.CLIENT)
-  def getIconFromDamage(damage: Int): IIcon = itemIcons(damage)
+  override def getIconFromDamage(damage: Int): IIcon = itemIcons(damage)
 }

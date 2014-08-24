@@ -33,13 +33,13 @@ object Init {
 
   def recipes() {
     Log.trace("Init.recipes()")
-    GameRegistry.addShapedRecipe(ItemBootsBucket, "a", "b", "c", 'a', Items.leather_boots, 'b', Items.golden_boots, 'c', Items.bucket)
-    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 0), "a", "b", 'a', Blocks.dirt, 'b', Items.bucket)
-    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 0), "a", "b", 'a', Blocks.sand, 'b', Items.bucket)
-    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 0), "a", "b", 'a', Blocks.gravel, 'b', Items.bucket)
-    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 1), "a a", " b ", 'a', Items.water_bucket, 'b', Items.bucket)
-    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 2), "a b", " c ", 'a', Items.water_bucket, 'b', Items.lava_bucket, 'c', Blocks.cobblestone)
-    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 3), "a b", " c ", 'a', new ItemStack(ItemToolBucket, 1, 1), 'b', Items.lava_bucket, 'c', Blocks.stone)
+    GameRegistry.addShapedRecipe(new ItemStack(ItemBootsBucket, 1, 0), "a", "b", "c", 'a': Character, Items.leather_boots, 'b': Character, Items.golden_boots, 'c': Character, Items.bucket)
+    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 0), "a", "b", 'a': Character, Blocks.dirt, 'b': Character, Items.bucket)
+    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 0), "a", "b", 'a': Character, Blocks.sand, 'b': Character, Items.bucket)
+    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 0), "a", "b", 'a': Character, Blocks.gravel, 'b': Character, Items.bucket)
+    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 1), "a a", " b ", 'a': Character, Items.water_bucket, 'b': Character, Items.bucket)
+    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 2), "a b", " c ", 'a': Character, Items.water_bucket, 'b': Character, Items.lava_bucket, 'c': Character, Blocks.cobblestone)
+    GameRegistry.addShapedRecipe(new ItemStack(ItemToolBucket, 1, 3), "a b", " c ", 'a': Character, new ItemStack(ItemToolBucket, 1, 1), 'b': Character, Items.lava_bucket, 'c': Character, Blocks.stone)
   }
 
   def handlers() {
