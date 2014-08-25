@@ -1,5 +1,5 @@
 package vorquel.mod.vderps.proxy
 
-object ClientProxy extends IProxy {
+class ClientProxy extends IProxy {
 
 }

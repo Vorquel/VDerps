@@ -9,7 +9,7 @@ class ItemVD(name: String) extends Item {
   val itemName: String = name
   setCreativeTab(Ref.VD_TAB)
 
-  override def getUnlocalizedName: String = String.format("item.%s", getShortName)
+  override def getUnlocalizedName: String = s"item.$getShortName"
 
   override def getUnlocalizedName(itemStack: ItemStack): String = getUnlocalizedName
 
@@ -18,5 +18,5 @@ class ItemVD(name: String) extends Item {
     itemIcon = iconRegister.registerIcon(getShortName)
   }
 
-  def getShortName: String = String.format("%s:%s", Ref.MOD_ID.toLowerCase, itemName)
+  def getShortName: String = s"${Ref.MOD_ID.toLowerCase}:$itemName"
 }

@@ -14,11 +14,11 @@ class BlockVD(name: String, material: Material) extends Block(material) {
     this(name, Material.rock)
   }
 
-  override def getUnlocalizedName: String = String.format("tile.%s", getShortName)
+  override def getUnlocalizedName: String = s"tile.$getShortName"
 
   @SideOnly(Side.CLIENT) override def registerBlockIcons(iconRegister: IIconRegister) {
     blockIcon = iconRegister.registerIcon(getShortName)
   }
 
-  def getShortName: String = String.format("%s:%s", Ref.MOD_ID.toLowerCase, blockName)
+  def getShortName: String = s"${Ref.MOD_ID.toLowerCase}:$blockName"
 }

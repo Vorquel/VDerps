@@ -17,12 +17,12 @@ class ItemMultiVD(name: String, params: String*) extends ItemVD(name) {
     val index: Int = itemStack.getItemDamage
     var sub: String = null
     if(index < subname.length) sub = subname(index)
-    String.format("%s.%s", getUnlocalizedName(), sub)
+    s"$getUnlocalizedName.$sub"
   }
 
   @SideOnly(Side.CLIENT) override def registerIcons(iconRegister: IIconRegister) {
     for(i <- 0 until subname.length)
-      itemIcons(i) = iconRegister.registerIcon(String.format("%s.%s", getShortName, subname(i)))
+      itemIcons(i) = iconRegister.registerIcon(s"$getShortName.${subname(i)}")
   }
 
   @SideOnly(Side.CLIENT)
