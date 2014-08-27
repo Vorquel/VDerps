@@ -21,7 +21,7 @@ object ItemToolBucket extends ItemMultiVD("toolBucket", "drainer", "waterInf", "
       case 1 => useWaterInf(world, player, x, y, z, side)
       case 2 => placeBlock(Blocks.cobblestone, world, player, x, y, z, side)
       case 3 => placeBlock(Blocks.stone, world, player, x, y, z, side)
-      case 4 => useBridger(world, player, x, y, z, xIn, yIn, zIn)
+      case 4 => useBridger(world, player, x, y, z, xIn, yIn, zIn, side)
       case _ =>
         Log.error(s"Item ${getUnlocalizedName(stack)} not yet implemented")
         false
@@ -58,18 +58,54 @@ object ItemToolBucket extends ItemMultiVD("toolBucket", "drainer", "waterInf", "
         case 3 => return placeBlock(block, world, player, x, y, z+1, -1)
         case 4 => return placeBlock(block, world, player, x-1, y, z, -1)
         case 5 => return placeBlock(block, world, player, x+1, y, z, -1)
-        case _ => Log.warn(s"Attempted to place block on invalid side $side.")
+        case s => Log.warn(s"Attempted to place block on invalid side $s.")
       }
     if(!world.canPlaceEntityOnSide(block, x, y, z, false, side, null, new ItemStack(block))) return false
     world.playSoundEffect(x + 0.5, y + 0.5, z + 0.5, block.stepSound.func_150496_b, (block.stepSound.getVolume + 1.0F) / 2.0F, block.stepSound.getPitch * 0.8F)
     world.setBlock(x, y, z, block)
   }
 
-  private def useBridger(world: World, player: EntityPlayer, x: Int, y: Int, z: Int, xIn: Float, yIn: Float, zIn: Float): Boolean = {
+  private def useBridger(world: World, player: EntityPlayer, x: Int, y: Int, z: Int, xIn: Float, yIn: Float, zIn: Float, side: Int): Boolean = {
     if(world.isRemote) return true
-    Log.info(f"xIn: $xIn%.3f")
-    Log.info(f"xIn: $yIn%.3f")
-    Log.info(f"xIn: $zIn%.3f")
-    true
+    val block: Block = world.getBlock(x,y,z)
+    if(block.hasTileEntity(world,x,y,z)) return false
+    val lo = .25
+    val hi = .75
+    //if(blah blah blah) {do stuff} //TODO check for block in inventory here
+    if((xIn>lo && xIn<hi && yIn>lo && yIn<hi) || (xIn>lo && xIn<hi && zIn>lo && zIn<hi) || (yIn>lo && yIn<hi && zIn>lo && zIn<hi))
+      return tower(world, player, block, x, y, z, side)
+    val (pair, sides) =
+    side match {
+      case 0 | 1 => ((xIn, zIn), (4,5,2,3))
+      case 2 | 3 => ((xIn, yIn), (4,5,0,1))
+      case 4 | 5 => ((yIn, zIn), (0,1,2,3))
+      case s => Log.error(s"Invalid side $s found in bridger."); return false
+    }
+    if(pair._1 > pair._2) {
+      if(pair._1 > 1-pair._2) tower(world, player, block, x, y, z, sides._1)
+      else                    tower(world, player, block, x, y, z, sides._4)
+    } else {
+      if(pair._1 > 1-pair._2) tower(world, player, block, x, y, z, sides._3)
+      else                    tower(world, player, block, x, y, z, sides._2)
+    }
+  }
+
+  private def tower(world: World, player: EntityPlayer, block: Block, x: Int, y: Int, z: Int, side: Int, range: Int = 16): Boolean = {
+    if(range == 0) return false
+    val otherBlock: Block = world.getBlock(x,y,z)
+    if(otherBlock == block)
+      side match {
+        case 0 => return tower(world, player, block, x, y+1, z, side, range-1)
+        case 1 => return tower(world, player, block, x, y-1, z, side, range-1)
+        case 2 => return tower(world, player, block, x, y, z+1, side, range-1)
+        case 3 => return tower(world, player, block, x, y, z-1, side, range-1)
+        case 4 => return tower(world, player, block, x+1, y, z, side, range-1)
+        case 5 => return tower(world, player, block, x-1, y, z, side, range-1)
+        case s => Log.error(s"Invalid side $s found in bridger."); return false
+      }
+    if(otherBlock.isReplaceable(world, x, y, z)) {
+      placeBlock(block, world, player, x, y, z, -1)
+      //TODO remove block from inventory
+    } else false
   }
 }

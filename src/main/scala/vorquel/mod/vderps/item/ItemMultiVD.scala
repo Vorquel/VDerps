@@ -17,7 +17,7 @@ class ItemMultiVD(name: String, params: String*) extends ItemVD(name) {
     val index: Int = itemStack.getItemDamage
     var sub: String = null
     if(index < subname.length) sub = subname(index)
-    s"$getUnlocalizedName.$sub"
+    s"${getUnlocalizedName()}.$sub"
   }
 
   @SideOnly(Side.CLIENT) override def registerIcons(iconRegister: IIconRegister) {
